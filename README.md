@@ -9,28 +9,10 @@ This is a mixture of Scheme and xtlang, really.
 
 ## Usage
 
-Simply include the `Highlight.js` script package in your webpage or node app, load up this module and apply it to `hljs`.
+Currently there is a [problem with hilight.js](https://github.com/highlightjs/highlight.js/pull/1888), we can not use this repository independently.
 
-If you're not using a build system and just want to embed this in your webpage:
-
-```html
-<script type="text/javascript" src="/path/to/highlight.pack.js"></script>
-<script type="text/javascript" src="/path/to/highlightjs-xtlang/xtlang.js"></script>
-<script type="text/javascript">
-    hljs.registerLanguage('xtlang', window.hljsDefineXtlang);
-    hljs.initHighlightingOnLoad();
-</script>
-```
-
-If you're using webpack / rollup / browserify / node:
-
-```javascript
-var hljs = require('highlightjs');
-var hljsDefineXtlang = require('highlightjs-xtlang');
-
-hljsDefineXtlang(hljs);
-hljs.initHighlightingOnLoad();
-```
+Therefore, we need to copy [highlight.js source](https://github.com/highlightjs/highlight.js/blob/master/src/highlight.js) and [highlightjs-xtlang source](https://github.com/highlightjs/highlightjs-xtlang/blob/master/xtlang.js) to path/js/hightlight/ .
+Please refer to [here](https://github.com/extemporelang/extemporelang.github.io/tree/master/js/highlight) for specific usage.
 
 ## License
 
