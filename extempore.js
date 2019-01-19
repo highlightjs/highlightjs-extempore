@@ -132,7 +132,7 @@ function hljsDefineExtempore(hljs) {
         end: '\\*',
         lexemes: VALID_SCHEME_NAME_RE
       },
-      { begin: '(<' + VALID_XTLANG_TYPE_RE + '>|\\|' + VALID_XTLANG_TYPE_RE + '\\||/' +
+      { begin: ':?(<' + VALID_XTLANG_TYPE_RE + '>|\\|' + VALID_XTLANG_TYPE_RE + '\\||/' +
                VALID_XTLANG_TYPE_RE + '/|' + VALID_XTLANG_TYPE_RE + '\\*)\\**' }
     ],
   };
@@ -453,7 +453,7 @@ function hljsDefineExtempore(hljs) {
         begin: '"', end: '"',
         endsParent: true
       },
-      hljs.inherit(hljs.TITLE_MODE, { begin: VALID_SCHEME_NAME_RE, endsParent: true })
+      hljs.inherit(hljs.TITLE_MODE, { begin: VALID_SCHEME_NAME_RE.replace(':', ''), endsParent: true })
     ]
   };
 
