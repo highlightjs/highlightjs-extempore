@@ -4,14 +4,14 @@ let path = require('path');
 
 let hljs = require("highlightjs");
 const fs = require("fs");
-let hljsDefineXtlang = require("../xtlang");
+let hljsDefineExtempore = require("../extempore");
 
 const readdir = promisify(fs.readdir),
       readFile = promisify(fs.readFile);
 
-describe("xtlang Tests", () => {
+describe("extempore Tests", () => {
     beforeEach(() => {
-        hljsDefineXtlang(hljs);
+        hljsDefineExtempore(hljs);
     });
     it("should generate correct markup", async () => {
         var files = await readdir(path.join(__dirname, "markup"));
@@ -21,13 +21,13 @@ describe("xtlang Tests", () => {
             let expectFn = fn.replace(".txt", ".expect.txt");
             var code = await readFile(fn, "utf-8");
             var exp = await readFile(expectFn, "utf-8");
-            var actual = hljs.highlight("xtlang", code).value;
+            var actual = hljs.highlight("extempore", code).value;
             actual.trim().should.eql(exp.trim(), f);
         }
     });
     it("should be detected correctly", async () => {
         var code = await readFile(path.join(__dirname, "detect.txt"), "utf-8");
         var actual = hljs.highlightAuto(code).language;
-        actual.should.eql("xtlang");
+        actual.should.eql("extempore");
     });
 });

@@ -1,5 +1,5 @@
 /*
-Language: xtlang
+Language: extempore
 Description: This is a mixture of Scheme and xtlang for the `Extempore programming environment <https://extemporelang.github.io/>`.
 Author: YUYA CHIBA <cy.blue.9@gmail.com>
 Category: lisp
@@ -7,7 +7,7 @@ Category: lisp
 
 var module = module ? module : {}; // shim for browser use
 
-function hljsDefineXtlang(hljs) {
+function hljsDefineExtempore(hljs) {
   var SCHEME_SIMPLE_NUMBER_RE  = '(\\-|\\+|\\.)?\\d+([./]\\d*)?';
   var SCHEME_COMPLEX_NUMBER_RE = SCHEME_SIMPLE_NUMBER_RE + '[\\+\\-]' +
                                  SCHEME_SIMPLE_NUMBER_RE + 'i';
@@ -490,7 +490,7 @@ function hljsDefineXtlang(hljs) {
   COMMON.contains.concat(COMMENT);
 
   return {
-    aliases: ['xtm'],
+    aliases: ['xtlang', 'xtm'],
     illegal: /\S/,
     contains: [
       SHEBANG, NUMBER, XTLANG_TYPE, STRING, QUOTED_IDENT, SPECIAL_OPERATORS, QUOTED_LIST, IDENT ,LIST
@@ -499,7 +499,7 @@ function hljsDefineXtlang(hljs) {
 };
 
 module.exports = function (hljs) {
-  hljs.registerLanguage('xtlang', hljsDefineXtlang);
+  hljs.registerLanguage('extempore', hljsDefineExtempore);
 };
 
-module.exports.definer = hljsDefineXtlang;
+module.exports.definer = hljsDefineExtempore;

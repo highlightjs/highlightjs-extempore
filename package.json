@@ -1,8 +1,8 @@
 {
     "name": "highlightjs-xtlang",
     "version": "1.0.1",
-    "description": "highlight.js syntax definition for xtlang language",
-    "main": "xtlang.js",
+    "description": "highlight.js syntax definition for extempore languages (Scheme and xtlang)",
+    "main": "extempore.js",
     "scripts": {
         "test": "./node_modules/.bin/mocha --reporter spec"
     },
@@ -11,6 +11,7 @@
         "url": "git+https://github.com/highlightjs/highlightjs-xtlang.git"
     },
     "keywords": [
+	    "extempore",
         "xtlang",
         "hljs",
         "highlightjs",
