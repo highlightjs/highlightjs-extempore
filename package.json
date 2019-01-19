@@ -11,7 +11,7 @@
         "url": "git+https://github.com/highlightjs/highlightjs-xtlang.git"
     },
     "keywords": [
-	    "extempore",
+        "extempore",
         "xtlang",
         "hljs",
         "highlightjs",
