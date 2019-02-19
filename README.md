@@ -1,5 +1,7 @@
 # highlightjs-xtlang
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/highlightjs/highlightjs-xtlang.svg)](https://greenkeeper.io/)
+
 `highlight.js` syntax definition for
 [Extempore](https://extemporelang.github.io/) source code. Because of the way
 that Extempore works, it's really two languages---Scheme and xtlang.
