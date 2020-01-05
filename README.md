@@ -16,7 +16,7 @@ Therefore, we need to copy [highlight.js
 source](https://github.com/highlightjs/highlight.js/blob/master/src/highlight.js)
 and [highlightjs-xtlang
 source](https://github.com/highlightjs/highlightjs-xtlang/blob/master/xtlang.js)
-to path/js/hightlight/ . Please refer to
+to `path/js/hightlight/` . Please refer to
 [here](https://github.com/extemporelang/extemporelang.github.io/tree/master/js/highlight)
 for specific usage.
 
