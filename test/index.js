@@ -4,14 +4,14 @@ let path = require('path');
 
 let hljs = require("highlightjs");
 const fs = require("fs");
-let hljsDefineExtempore = require("../extempore");
+//let hljsDefineExtempore = require("../extempore");
 
 const readdir = promisify(fs.readdir),
       readFile = promisify(fs.readFile);
 
 describe("extempore Tests", () => {
     beforeEach(() => {
-        hljsDefineExtempore(hljs);
+//        hljsDefineExtempore(hljs);
     });
     it("should generate correct markup", async () => {
         var files = await readdir(path.join(__dirname, "markup"));
@@ -26,7 +26,7 @@ describe("extempore Tests", () => {
         }
     });
     it("should be detected correctly", async () => {
-        var code = await readFile(path.join(__dirname, "detect.txt"), "utf-8");
+        var code = await readFile(path.join(__dirname, "detect/detect.txt"), "utf-8");
         var actual = hljs.highlightAuto(code).language;
         actual.should.eql("extempore");
     });
