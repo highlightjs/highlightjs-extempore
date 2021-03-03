@@ -1,31 +1,68 @@
-# highlightjs-xtlang
+# highlightjs-extempore
 
 `highlight.js` syntax definition for
-[Extempore](https://extemporelang.github.io/) source code. Because of the way
+[Extempore][1] source code. Because of the way
 that Extempore works, it's really two languages---Scheme and xtlang.
 
 For more about highlight.js, see <https://highlightjs.org/>
 
 ## Usage
 
-Currently there is a [problem with
-highlight.js](https://github.com/highlightjs/highlight.js/pull/1888), we can not
-use this repository independently.
+Simply include the Highlight.js library in your webpage or Node app, then load this module.
 
-Therefore, we need to copy [highlight.js
-source](https://github.com/highlightjs/highlight.js/blob/master/src/highlight.js)
-and [highlightjs-xtlang
-source](https://github.com/highlightjs/highlightjs-xtlang/blob/master/xtlang.js)
-to `path/js/hightlight/` . Please refer to
-[here](https://github.com/extemporelang/extemporelang.github.io/tree/master/js/highlight)
-for specific usage.
+### Static website or simple usage
 
-Alternately, you can [see how Ben does it on his
-blog](http://benswift.me/blog/2019/01/17/highlight-js-with-xtlang-support/).
+Simply load the module after loading Highlight.js. You'll use the minified version found in the `dist` directory. This module is just a CDN build of the language, so it will register itself as the Javascript is loaded.
+
+```html
+<script type="text/javascript" src="/path/to/highlight.min.js"></script>
+<script type="text/javascript" src="/path/to/extempore.min.js"></script>
+<script type="text/javascript">
+  hljs.highlightAll();
+</script>
+>
+```
+
+## Using directly from the UNPKG CDN
+
+```html
+<script type="text/javascript"
+  src="https://unpkg.com/highlightjs-extempore@latest/dist/extempore.min.js"></script>
+```
+
+- More info: <https://unpkg.com>
+
+## With Node or another build system
+
+If you're using Node / Webpack / Rollup / Browserify, etc, simply require the language module, then register it with Highlight.js.
+
+```javascript
+var hljs = require('highlightjs');
+var hljsExtempore = require('highlightjs-extempore');
+
+hljs.registerLanguage("extempore", hljsExtempore);
+hljs.highlightAll();
+```
 
 ## License
 
-`highlightjs-xtlang` is released under the BSD License. See [LICENSE][1] file
+`highlightjs-extempore` is released under the BSD License. See [LICENSE][2] file
 for details.
 
-[1]: https://github.com/highlightjs/highlightjs-xtlang/blob/master/LICENSE
+### Author
+
+Yuya Chiba([@cyblue9][3]) <cy.blue.9@gmail.com>
+
+### Maintainer
+
+Yuya Chiba([@cyblue9][3]) <cy.blue.9@gmail.com>
+
+## Links
+
+- The official site for the Highlight.js library is <https://highlightjs.org/>.
+- The Highlight.js GitHub project: <https://github.com/highlightjs/highlight.js>
+- Learn more about extempore: <https://extemporelang.github.io/>
+
+[1]:https://extemporelang.github.io/
+[2]: https://github.com/highlightjs/highlightjs-extempore/blob/master/LICENSE
+[3]: https://github.com/cyblue9

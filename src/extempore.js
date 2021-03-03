@@ -5,9 +5,7 @@ Author: YUYA CHIBA <cy.blue.9@gmail.com>
 Category: lisp
 */
 
-var module = module ? module : {}; // shim for browser use
-
-function hljsDefineExtempore(hljs) {
+export default function (hljs) {
   var SCHEME_SIMPLE_NUMBER_RE  = '(\\-|\\+|\\.)?\\d+([./]\\d*)?';
   var SCHEME_COMPLEX_NUMBER_RE = SCHEME_SIMPLE_NUMBER_RE + '[\\+\\-]' +
                                  SCHEME_SIMPLE_NUMBER_RE + 'i';
@@ -490,16 +488,12 @@ function hljsDefineExtempore(hljs) {
   COMMON.contains.concat(COMMENT);
 
   return {
+    name: "extempore",
     aliases: ['xtlang', 'xtm'],
+    disableAutodetect: true,
     illegal: /\S/,
     contains: [
       SHEBANG, NUMBER, XTLANG_TYPE, STRING, QUOTED_IDENT, SPECIAL_OPERATORS, QUOTED_LIST, IDENT ,LIST
     ].concat(COMMENT)
   };
 };
-
-module.exports = function (hljs) {
-  hljs.registerLanguage('extempore', hljsDefineExtempore);
-};
-
-module.exports.definer = hljsDefineExtempore;
