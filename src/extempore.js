@@ -119,7 +119,6 @@ export default function (hljs) {
 
   var XTLANG_TYPE = {
     className: 'type',
-    lexemes: VALID_XTLANG_TYPE_RE,
     relevance: 10,
     variants: [
       { begin: VALID_XTLANG_TYPE_RE_ },
@@ -127,8 +126,7 @@ export default function (hljs) {
         // Global variable
         className: 'variable',
         begin: '\\*\\w',
-        end: '\\*',
-        lexemes: VALID_SCHEME_NAME_RE
+        end: '\\*'
       },
       { begin: ':?(<' + VALID_XTLANG_TYPE_RE + '>|\\|' + VALID_XTLANG_TYPE_RE + '\\||/' +
                VALID_XTLANG_TYPE_RE + '/|' + VALID_XTLANG_TYPE_RE + '\\*)\\**' }
@@ -154,7 +152,7 @@ export default function (hljs) {
     ],
     contains: [
       {
-        className: 'doctag', begin: '@\\w+', lexemes: VALID_XTLANG_NAME_RE
+        className: 'doctag', begin: '@\\w+'
       }
     ]
   };
@@ -205,16 +203,14 @@ export default function (hljs) {
        *   "lambdahoge"
        */
       className: 'variable',
-      begin: COMMON_KEYWORDS_RE + VALID_SCHEME_NAME_RE,
-      lexemes: VALID_SCHEME_NAME_RE
+      begin: COMMON_KEYWORDS_RE + VALID_SCHEME_NAME_RE
     },
     {
       /* Example:
        *   "lambda"
        */
       className: 'keyword',
-      begin: COMMON_KEYWORDS_RE,
-      lexemes: VALID_SCHEME_NAME_RE
+      begin: COMMON_KEYWORDS_RE
     }
   ];
 
@@ -224,32 +220,28 @@ export default function (hljs) {
        *   "unquote-splicinghoge"
        */
       className: 'variable',
-      begin: SCHEME_KEYWORDS_RE+ VALID_SCHEME_NAME_RE,
-      lexemes: VALID_SCHEME_NAME_RE
+      begin: SCHEME_KEYWORDS_RE+ VALID_SCHEME_NAME_RE
     },
     {
       /* Example:
        *   "unquote-splicing"
        */
       className: 'keyword',
-      begin: SCHEME_KEYWORDS_RE,
-      lexemes: VALID_SCHEME_NAME_RE
+      begin: SCHEME_KEYWORDS_RE
     },
     {
       /* Example:
        *   "unquotehoge"
        */
       className: 'variable',
-      begin: SCHEME_KEYWORDS_OVERLAP_RE + VALID_SCHEME_NAME_RE,
-      lexemes: VALID_SCHEME_NAME_RE
+      begin: SCHEME_KEYWORDS_OVERLAP_RE + VALID_SCHEME_NAME_RE
     },
     {
       /* Example:
        *   "unquote"
        */
       className: 'keyword',
-      begin: SCHEME_KEYWORDS_OVERLAP_RE,
-      lexemes: VALID_SCHEME_NAME_RE
+      begin: SCHEME_KEYWORDS_OVERLAP_RE
     }
   ]
 
@@ -259,16 +251,14 @@ export default function (hljs) {
        *   "letzhoge"
        */
       className: 'variable',
-      begin: XTLANG_KEYWORDS_RE + VALID_XTLANG_NAME_RE,
-      lexemes: VALID_XTLANG_NAME_RE
+      begin: XTLANG_KEYWORDS_RE + VALID_XTLANG_NAME_RE
     },
     {
       /* Example:
        *   "letz"
        */
       className: 'keyword',
-      begin: XTLANG_KEYWORDS_RE,
-      lexemes: VALID_XTLANG_NAME_RE
+      begin: XTLANG_KEYWORDS_RE
     }
   ];
 
@@ -278,32 +268,28 @@ export default function (hljs) {
        *   "printlnhoge"
        */
       className: 'variable',
-      begin: COMMON_FUNCTIONS_RE + VALID_SCHEME_NAME_RE,
-      lexemes: VALID_SCHEME_NAME_RE
+      begin: COMMON_FUNCTIONS_RE + VALID_SCHEME_NAME_RE
     },
     {
       /* Example:
        *   "prinln"
        */
       className: 'funciton',
-      begin: COMMON_FUNCTIONS_RE,
-      lexemes: VALID_SCHEME_NAME_RE
+      begin: COMMON_FUNCTIONS_RE
     },
     {
       /* Example:
        *   "printhoge"
        */
       className: 'variable',
-      begin: COMMON_FUNCTIONS_OVERLAP_RE + VALID_SCHEME_NAME_RE,
-      lexemes: VALID_SCHEME_NAME_RE
+      begin: COMMON_FUNCTIONS_OVERLAP_RE + VALID_SCHEME_NAME_RE
     },
     {
       /* Example:
        *   "print"
        */
       className: 'funciton',
-      begin: COMMON_FUNCTIONS_OVERLAP_RE,
-      lexemes: VALID_SCHEME_NAME_RE
+      begin: COMMON_FUNCTIONS_OVERLAP_RE
     }
   ];
 
@@ -313,32 +299,28 @@ export default function (hljs) {
        *   "read-charhoge"
        */
       className: 'variable',
-      begin: SCHEME_FUNCTIONS_RE + VALID_SCHEME_NAME_RE,
-      lexemes: VALID_SCHEME_NAME_RE
+      begin: SCHEME_FUNCTIONS_RE + VALID_SCHEME_NAME_RE
     },
     {
       /* Example:
        *   "read-char"
        */
       className: 'funciton',
-      begin: SCHEME_FUNCTIONS_RE,
-      lexemes: VALID_SCHEME_NAME_RE,
+      begin: SCHEME_FUNCTIONS_RE
     },
     {
       /* Example:
        *   "readhoge"
        */
       className: 'variable',
-      begin: SCHEME_FUNCTIONS_OVERLAP_RE + VALID_SCHEME_NAME_RE,
-      lexemes: VALID_SCHEME_NAME_RE
+      begin: SCHEME_FUNCTIONS_OVERLAP_RE + VALID_SCHEME_NAME_RE
     },
     {
       /* Example:
        *   "read"
        */
       className: 'funciton',
-      begin: SCHEME_FUNCTIONS_OVERLAP_RE,
-      lexemes: VALID_SCHEME_NAME_RE,
+      begin: SCHEME_FUNCTIONS_OVERLAP_RE
     }
   ];
 
@@ -348,54 +330,47 @@ export default function (hljs) {
        *   "tuple-ref-ptrhoge"
        */
       className: 'variable',
-      begin: XTLANG_FUNCTIONS_RE + VALID_XTLANG_NAME_RE,
-      lexemes: VALID_XTLANG_NAME_RE
+      begin: XTLANG_FUNCTIONS_RE + VALID_XTLANG_NAME_RE
     },
     {
       /* Example:
        *   "tuple-ref-ptr"
        */
       className: 'funciton',
-      begin: XTLANG_FUNCTIONS_RE,
-      lexemes: VALID_XTLANG_NAME_RE
+      begin: XTLANG_FUNCTIONS_RE
     },
     {
       /* Example:
        *  "tuple-refhoge"
        */
       className: 'variable',
-      begin: XTLANG_FUNCTIONS_OVERLAP_RE + VALID_XTLANG_NAME_RE,
-      lexemes: VALID_XTLANG_NAME_RE
+      begin: XTLANG_FUNCTIONS_OVERLAP_RE + VALID_XTLANG_NAME_RE
     },
     {
       /* Example:
        *   "tuple-ref"
        */
       className: 'funciton',
-      begin: XTLANG_FUNCTIONS_OVERLAP_RE,
-      lexemes: VALID_XTLANG_NAME_RE
+      begin: XTLANG_FUNCTIONS_OVERLAP_RE
     },
     {
       /* Example:
        *   "tuplehoge"
        */
       className: 'variable',
-      begin: XTLANG_FUNCTIONS_OVERLAP_RE2 + VALID_XTLANG_NAME_RE,
-      lexemes: VALID_XTLANG_NAME_RE
+      begin: XTLANG_FUNCTIONS_OVERLAP_RE2 + VALID_XTLANG_NAME_RE
     },
     {
       /* Example:
        *   "tuple"
        */
       className: 'funciton',
-      begin: XTLANG_FUNCTIONS_OVERLAP_RE2,
-      lexemes: VALID_XTLANG_NAME_RE
+      begin: XTLANG_FUNCTIONS_OVERLAP_RE2
     }
   ]
 
   var DEFINE = {
     className: 'keyword',
-    lexemes: VALID_SCHEME_NAME_RE,
     end: '$',
     variants : [
       {
@@ -456,14 +431,12 @@ export default function (hljs) {
   };
 
   var XTLANG = {
-    lexemes: VALID_SCHEME_NAME_RE,
     endsParent: true,
     variants: [
     ].concat(XTLANG_KEYWORDS, XTLANG_FUNCTIONS)
   };
 
   var SCHEME = {
-    lexemes: VALID_SCHEME_NAME_RE,
     endsParent: true,
     variants: [
     ].concat(SCHEME_KEYWORDS, SCHEME_FUNCTIONS)
